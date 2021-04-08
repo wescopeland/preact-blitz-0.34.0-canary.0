@@ -1,6 +1,8 @@
 const { sessionMiddleware, simpleRolesIsAuthorized } = require("blitz")
 
-module.exports = {
+const withPreact = require("next-plugin-preact")
+
+module.exports = withPreact({
   middleware: [
     sessionMiddleware({
       isAuthorized: simpleRolesIsAuthorized,
@@ -14,4 +16,4 @@ module.exports = {
     return config
   },
   */
-}
+})
